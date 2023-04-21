@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>HCMemoryLeakRepro</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HotChocolate.AspNetCore" Version="13.0.5" />
+      <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.0.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
+    </ItemGroup>
+
+</Project>
