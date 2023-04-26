@@ -1,4 +1,5 @@
 using HCMemoryLeakRepro;
+using HotChocolate.Execution.Options;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddGraphQLServer()
     .AddSorting()
     .AddProjections()
     .RegisterDbContext<ApplicationDbContext>(DbContextKind.Pooled)
+    .SetRequestOptions(_ => new RequestExecutorOptions { ExecutionTimeout = TimeSpan.FromMinutes(30)})
     .InitializeOnStartup();
 
 var app = builder.Build();
